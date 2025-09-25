@@ -1,0 +1,141 @@
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  transition: all 0.3s ease;
+  gap: 1rem;
+}
+
+.task-item:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.task-main-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.task-text {
+  display: block;
+  word-break: break-word;
+  cursor: pointer;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: var(--text-color);        /* Ensure task text uses correct color */
+  font-weight: 500;                /* Make text slightly bolder */
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: var(--text-secondary);    /* Completed tasks use secondary color */
+  opacity: 0.7;
+}
+
+/* Edit input styling */
+.edit-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text-color);        /* Edit text should be visible */
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.edit-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--primary-color-alpha);
+}
+
+/* Task meta information */
+.task-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.task-date {
+  font-size: 0.75rem;
+  color: var(--text-secondary);    /* Date uses secondary color */
+}
+
+/* Drag handle */
+.drag-handle {
+  cursor: grab;
+  padding: 0.5rem;
+  color: var(--text-secondary);
+  user-select: none;
+}
+
+/* Checkbox styling */
+.task-checkbox {
+  width: 1.3rem;
+  height: 1.3rem;
+  cursor: pointer;
+  accent-color: var(--primary-color);
+}
+
+/* Action buttons */
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-button {
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.action-button:hover {
+  background: var(--hover-bg);
+  color: var(--text-color);
+}
+
+/* Dark mode specific improvements */
+.dark .task-text {
+  color: #f8fafc;                  /* Bright white for dark mode */
+  font-weight: 400;
+}
+
+.dark .task-item {
+  border-color: #475569;
+}
+
+.dark .task-item:hover {
+  border-color: #60a5fa;
+  background: #1e293b;
+}
+
+/* Ensure good contrast ratio */
+@media (prefers-contrast: high) {
+  .dark .task-text {
+    color: #ffffff;
+    font-weight: 500;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .task-item {
+    padding: 0.875rem;
+  }
+  
+  .task-text {
+    font-size: 1rem;
+  }
+}

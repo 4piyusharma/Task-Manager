@@ -1,0 +1,56 @@
+.task-form {
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.task-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--input-bg);
+  color: var(--text-color);        /* Input text color */
+  transition: all 0.3s ease;
+}
+
+.task-input::placeholder {
+  color: var(--text-secondary);    /* Placeholder color */
+}
+
+.task-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  color: var(--text-color);        /* Focus text color */
+}
+
+.add-button {
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-button:hover {
+  background: var(--primary-color-dark);
+}
+
+/* Dark mode input improvements */
+.dark .task-input {
+  background: #334155;
+  border-color: #475569;
+  color: #f1f5f9;
+}
+
+.dark .task-input:focus {
+  background: #475569;
+  color: #ffffff;
+}
